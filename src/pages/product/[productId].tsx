@@ -1,3 +1,5 @@
+// pages/product/[productId].tsx
+
 import {useRouter} from "next/router";
 import {Col, Row, Card, Divider, Carousel, Button} from 'antd';
 import Layout from "../../components/Layout";
@@ -19,9 +21,6 @@ export default function ProductPage() {
             return newCount;
         });
     };
-
-    // console.log('Current Path:', pathname);
-    // console.log('Query Parameters:', query.productId);
     const findProductById = (id: string) => {
         return productsData.find((product) => product.id === id);
     };
@@ -37,7 +36,6 @@ export default function ProductPage() {
             </Layout>
         );
     }
-    console.log('Selected Product:', selectedProduct.currencySymbol);
     const handleThumbnailClick = (index) => {
         setCarouselIndex(index);
     };

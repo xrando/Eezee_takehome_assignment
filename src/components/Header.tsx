@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ itemCount }) => {
                     <Image src={singaporeFlag} alt="Singapore Flag" width={16} height={16}/>
                     <span> Singapore</span>
                 </Col>
-                <Col span={2} xs={4} sm={4} md={4} lg={2} xl={2}>
+                <Col span={2} xs={5} sm={5} md={4} lg={4} xl={4}>
                     <PhoneOutlined style={{fontSize: '16px', marginLeft: '8px'}} rev={undefined}/>
                     <span>{"+65 6797 9688"}</span>
                 </Col>
@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({ itemCount }) => {
                 <Col span={2}>
                     {/*blank*/}
                 </Col>
-                <Col span={3} xs={4} sm={4} md={3} lg={3} xl={3} style={{marginRight: '15px'}}>
+                <Col span={3} xs={4} sm={4} md={3} lg={3} xl={2}>
                     <Image src={eezeeLogo} alt="Eezee Logo" width={'100%'} height={'30%'}/>
                 </Col>
                 <Col span={8} xs={4} sm={4} md={8} lg={8} xl={8}>
@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ itemCount }) => {
                 <Col span={8}>
                     {/*blank*/}
                 </Col>
-                <Col span={2}>
+                <Col span={2} xs={2} sm={2} md={2} lg={2} xl={2}>
                     <Badge count={itemCount} showZero offset={[8, 0]} style={{ backgroundColor: '#2A64DB', color: 'white' }}>
                         <ShoppingCartOutlined style={{fontSize: '24px', }} rev={undefined} />
                     </Badge>

@@ -1,4 +1,4 @@
-// AppState.tsx
+// utils/AppState.tsx
 import React, { useState, useEffect, ReactNode } from 'react';
 
 interface AppStateProps {

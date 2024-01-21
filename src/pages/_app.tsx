@@ -1,4 +1,4 @@
-// _app.tsx
+// pages/_app.tsx
 import React from 'react';
 import { AppStateProvider } from '../utils/AppState';
 

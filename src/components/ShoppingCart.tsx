@@ -27,7 +27,6 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ currencySymbol, price, upda
     };
 
     const handleAddToFavorites = () => {
-        // Implement your logic to add the item to favorites
         console.log('Added to favorites');
     };
 
@@ -40,7 +39,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ currencySymbol, price, upda
             <Divider style={{ margin: '0', marginBottom: '20px'}} dashed={true} />
             <div style={{ display: 'flex', alignItems: 'center', width: '90%', margin: '0 auto'}}>
                 <span style={{ fontWeight: 'bold', marginRight: '20px' }}>Quantity: </span>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
+                <div style={{ display: 'flow', alignItems: 'center' }}>
                     <Button style={{ borderRadius: '0', color: '#2A64DB' }} onClick={handleDecrement}>
                         -
                     </Button>
@@ -67,7 +66,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ currencySymbol, price, upda
             <Row justify="center">
                 <Col xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 20 }} lg={{ span: 22 }} xl={{ span: 22 }} style={{ width: '90%', maxWidth: '400px', margin: '0 auto' }}>
                     <Button
-                        style={{ background: 'white', color: 'dodgerblue', border: '1px solid dodgerblue', borderRadius: '0', marginBottom: '20px' }}
+                        style={{ background: 'white', color: '#2A64DB', border: '1px solid dodgerblue', borderRadius: '0', marginBottom: '20px' }}
                         block
                         onClick={handleAddToFavorites}
                     >

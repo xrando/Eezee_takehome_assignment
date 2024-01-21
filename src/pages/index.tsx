@@ -1,3 +1,5 @@
+// pages/index.tsx
+
 import React, {useContext} from "react";
 import {Col, Row, Card} from 'antd';
 import Image from "next/image";
@@ -12,11 +14,10 @@ const { Meta } = Card;
 
 export default function Homepage(): JSX.Element {
     const { itemCount } = useContext(AppStateContext);
-    console.log('Item count(homepage):', itemCount);
-    const filterDuplicates = (array) => {
+    const filter = (array) => {
         const uniqueNames = new Set();
         return array.filter(item => {
-            if (!uniqueNames.has(item.name)) {
+            if (!uniqueNames.has(item.name) && item.image?.url && item.productCount) {
                 uniqueNames.add(item.name);
                 return true;
             }
@@ -25,7 +26,7 @@ export default function Homepage(): JSX.Element {
     };
 
     // filter duplicate brands
-    const uniqueBrands = filterDuplicates(brandsData);
+    const filteredBrands = filter(brandsData);
     return (
         <>
             {/*<style jsx>{`*/}
@@ -62,7 +63,7 @@ export default function Homepage(): JSX.Element {
                 </Row>
                 <Row gutter={8}>
                     <Col span={2}></Col>
-                    {uniqueBrands.slice(0, 5).map((brand) => (
+                    {filteredBrands.slice(0, 5).map((brand) => (
                         <Col key={brand.id} xs={8} sm={8} md={4} lg={4} xl={4}>
                             <Card
                                 // hoverable
