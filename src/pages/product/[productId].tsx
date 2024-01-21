@@ -2,20 +2,24 @@ import {useRouter} from "next/router";
 import {Col, Row, Card, Divider, Carousel, Button} from 'antd';
 import Layout from "../../components/Layout";
 import productsData from "../../data/products.json";
-import React, {useRef, useState} from "react";
+import React, {useContext, useRef, useState} from "react";
 import ShoppingCart from "../../components/ShoppingCart";
+import {AppStateContext} from "../../utils/AppState";
 
 const {Meta} = Card;
 
 export default function ProductPage() {
     const router = useRouter();
     const {pathname, query} = router;
-    const [itemCount, setItemCount] = useState(0);
+    const { itemCount, setItemCount } = useContext(AppStateContext);
 
     const updateCartCount = (quantity: number) => {
-        setItemCount((prevCount) => prevCount + quantity);
-        console.log('Item count:', itemCount);
+        setItemCount((prevCount) => {
+            const newCount = prevCount + quantity;
+            return newCount;
+        });
     };
+
     // console.log('Current Path:', pathname);
     // console.log('Query Parameters:', query.productId);
     const findProductById = (id: string) => {

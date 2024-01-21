@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import {Col, Row, Card} from 'antd';
 import Image from "next/image";
 import banner from "../../public/images/banner.png";
@@ -6,10 +6,13 @@ import Layout from "../components/Layout";
 import brandsData from "../data/brands.json";
 import productsData from "../data/products.json";
 import {RightOutlined} from "@ant-design/icons";
+import {AppStateContext} from "../utils/AppState";
 
 const { Meta } = Card;
 
 export default function Homepage(): JSX.Element {
+    const { itemCount } = useContext(AppStateContext);
+    console.log('Item count(homepage):', itemCount);
     const filterDuplicates = (array) => {
         const uniqueNames = new Set();
         return array.filter(item => {
@@ -36,7 +39,7 @@ export default function Homepage(): JSX.Element {
             {/*    Welcome to Eezee Take-home Assignment! Enjoy :)*/}
             {/*</p>*/}
 
-            <Layout>
+            <Layout itemCount={itemCount}>
                 <Row>
                     <Col span={2}></Col>
                     <Col span={20} style={{marginTop: '15px'}}>
@@ -90,7 +93,6 @@ export default function Homepage(): JSX.Element {
                 <Row gutter={8}>
                     <Col span={2}></Col>
                     {productsData.slice(0, 5).map((product) => (
-                        console.log(product),
                         <Col key={product.id} xs={8} sm={8} md={4} lg={4} xl={4}>
                             <Card
                                 // hoverable
