@@ -2,12 +2,11 @@
 
 import React, {useEffect, useState} from 'react';
 import {Row, Col} from 'antd';
-import {PhoneOutlined} from '@ant-design/icons';
 import singaporeFlag from '../../public/icons/singapore_flag.png';
 import eezeeLogo from '../../public/icons/eezee_logo.png';
 import Image from 'next/image';
 import { Input, Badge } from 'antd';
-import { ShoppingCartOutlined, MenuOutlined, TagsOutlined, LayoutOutlined } from '@ant-design/icons';
+import { ShoppingCartOutlined, MenuOutlined, TagsOutlined, LayoutOutlined, PhoneOutlined } from '@ant-design/icons';
 import SearchBar from "./SearchBar";
 
 interface HeaderProps {
